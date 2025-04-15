@@ -12,7 +12,7 @@ terraform {
 }
 
 provider "keycloak" {
-  client_id     = var.keycloak_client_id
-  client_secret = var.keycloak_client_secret
-  url           = var.keycloak_url
+  client_id     = var.KEYCLOAK_CLIENT_ID
+  client_secret = var.KEYCLOAK_CLIENT_SECRET
+  url           = var.KEYCLOAK_URL
 }

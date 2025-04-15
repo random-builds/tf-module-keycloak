@@ -24,16 +24,16 @@ variable "extra_configs" {
   default = {}
 }
 
-variable "keycloak_url" {
+variable "KEYCLOAK_URL" {
   type = string
 }
 
-variable "keycloak_client_id" {
+variable "KEYCLOAK_CLIENT_ID" {
   type = string
   sensitive = true
 }
 
-variable "keycloak_client_secret" {
+variable "KEYCLOAK_CLIENT_SECRET" {
   type = string
   sensitive = true
 }
