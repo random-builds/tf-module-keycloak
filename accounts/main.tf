@@ -17,7 +17,7 @@ resource "random_password" "this" {
   upper = true
 }
 
-resource "keycloak_user" "user" {
+resource "keycloak_user" "this" {
   for_each = var.users
   realm_id = data.keycloak_realm.this.id
   username = each.key
@@ -38,5 +38,5 @@ resource "keycloak_group_memberships" "group_members" {
   realm_id = data.keycloak_realm.this.id
   group_id = keycloak_group.this[each.key].id
 
-  members  = each.value.members
+  members  = [for member in each.value.members: keycloak_user.this[member].username]
 }
