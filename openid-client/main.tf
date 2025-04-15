@@ -1,5 +1,5 @@
 data "keycloak_realm" "this" {
-  real = var.realm_name
+  realm = var.realm_name
 }
 
 resource "keycloak_openid_client" "this" {
