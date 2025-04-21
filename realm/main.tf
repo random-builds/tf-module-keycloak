@@ -48,3 +48,11 @@ resource "keycloak_openid_client_scope" "groups" {
   include_in_token_scope = true
   gui_order              = 1
 }
+
+resource "keycloak_openid_group_membership_protocol_mapper" "group_membership_mapper" {
+  realm_id        = keycloak_realm.realm.id
+  client_scope_id = keycloak_openid_client_scope.groups.id
+  name            = "group-membership-mapper"
+
+  claim_name = "groups"
+}
