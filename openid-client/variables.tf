@@ -11,7 +11,7 @@ variable "client_id" {
 }
 
 variable "enabled" {
-  type = bool
+  type    = bool
   default = true
 }
 
@@ -20,7 +20,7 @@ variable "valid_redirect_uris" {
 }
 
 variable "extra_configs" {
-  type = map(string)
+  type    = map(string)
   default = {}
 }
 
@@ -29,11 +29,11 @@ variable "KEYCLOAK_URL" {
 }
 
 variable "KEYCLOAK_CLIENT_ID" {
-  type = string
+  type      = string
   sensitive = true
 }
 
 variable "KEYCLOAK_CLIENT_SECRET" {
-  type = string
+  type      = string
   sensitive = true
 }

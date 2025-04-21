@@ -7,11 +7,11 @@ variable "KEYCLOAK_URL" {
 }
 
 variable "KEYCLOAK_CLIENT_ID" {
-  type = string
+  type      = string
   sensitive = true
 }
 
 variable "KEYCLOAK_CLIENT_SECRET" {
-  type = string
+  type      = string
   sensitive = true
 }

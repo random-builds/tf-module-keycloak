@@ -3,17 +3,17 @@ data "keycloak_realm" "this" {
 }
 
 resource "keycloak_openid_client" "this" {
-  realm_id            = data.keycloak_realm.this.id
-  client_id           = var.client_id
+  realm_id  = data.keycloak_realm.this.id
+  client_id = var.client_id
 
-  name                = var.client_name
-  enabled             = var.enabled
+  name    = var.client_name
+  enabled = var.enabled
 
-  standard_flow_enabled = true
+  standard_flow_enabled    = true
   service_accounts_enabled = true
 
-  implicit_flow_enabled = false
-  direct_access_grants_enabled = false
+  implicit_flow_enabled                     = false
+  direct_access_grants_enabled              = false
   oauth2_device_authorization_grant_enabled = false
 
   access_type         = "CONFIDENTIAL"
