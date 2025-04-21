@@ -33,3 +33,17 @@ resource "keycloak_openid_client" "this" {
 #   name     = "admin"
 #   realm_id = keycloak_realm.realm.id
 # }
+
+resource "keycloak_openid_client_default_scopes" "client_default_scopes" {
+  realm_id  = data.keycloak_realm.this.id
+  client_id = keycloak_openid_client.this.id
+
+  default_scopes = [
+    "profile",
+    "email",
+    "roles",
+    "web-origins",
+    "basic",
+    "groups",
+  ]
+}
